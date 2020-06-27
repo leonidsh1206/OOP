@@ -1,6 +1,6 @@
 package ru.shakov.lesson8.part1;
 
-public class Main {
+public class Run {
     public static void main(String[] args) {
 
         double addition = Calculator.Addition(10, 30);

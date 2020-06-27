@@ -7,7 +7,8 @@ public class Dog {
     public Dog(String name, int age) {
         this.age = age;
         this.name = name;
-        Counter.Count();
+        Counter.Count();    // Вызов счетчика
+
     }
 
 }
