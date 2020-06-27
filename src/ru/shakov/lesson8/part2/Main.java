@@ -1,6 +1,6 @@
 package ru.shakov.lesson8.part2;
 
-public class Run {
+public class Main {
     public static void main(String[] args) {
 
         Dog dog1 = new Dog("GoodBoy", 3);

@@ -2,7 +2,7 @@ package ru.shakov.lesson8.part1;
 
 public class Calculator {
 
-    public static double Addition(double a, double b) { //Сложение
+    public static double Addition(double a, double b) {
         double addition = a + b;
         return addition;
     }

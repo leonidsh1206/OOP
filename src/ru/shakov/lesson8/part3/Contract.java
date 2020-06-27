@@ -25,6 +25,7 @@ public class Contract {
         return contractS;
     }
 
+
     @Override
     public String toString() {
         return "Contract{" +
