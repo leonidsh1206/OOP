@@ -1,7 +1,9 @@
 package ru.shakov.lesson6v2;
 
-public class Book {
-
-    public void bookLayOnTheShelf() {}
-
+public class Book extends Unit {
+    private String ISBN;
+    // author
+    // title
+    // numberOfPages
+    // copies
 }
