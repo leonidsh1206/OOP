@@ -2,29 +2,24 @@ package ru.shakov.lesson8.part1;
 
 public class Calculator {
 
-    public static double Addition(double a, double b) {
-        double addition = a + b;
-        return addition;
+    public static double addition(double a, double b) {
+        return a + b;
     }
 
-    public static double Subtraction(double a, double b) {
-        double subtraction = a - b;
-        return subtraction;
+    public static double subtraction(double a, double b) {
+        return a - b;
     }
 
-    public static double Multiplication(double a, double b) {
-        double multiplication = a * b;
-        return multiplication;
+    public static double multiplication(double a, double b) {
+        return a * b;
     }
 
-    public static double Division(double a, double b) {
-        double division = a / b;
-        return division;
+    public static double division(double a, double b) {
+        return a / b;
     }
 
-    public static double Percentage(double a, double b) {
-        double percentage = a * 100 / b;
-        return percentage;
+    public static double percentage(double a, double b) {
+        return a * 100 / b;
     }
 
 }

@@ -10,7 +10,7 @@ public class Main {
         Dog dog3 = new Dog("GoodPuppy", 1);
         System.out.println(dog3.name);
 
-        System.out.println(Counter.counter);
+        System.out.println(Counter.count);
 
     }
 }

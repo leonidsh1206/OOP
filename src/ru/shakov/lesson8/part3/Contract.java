@@ -1,28 +1,29 @@
 package ru.shakov.lesson8.part3;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Contract {
     private int contractNumber;
-    private String contractDate;
-    private String[] contractS;
+    private LocalDate contractDate;
+    private String[] contractList;
 
-    public Contract(int contractNumber, String contractDate, String[] contractS) {
+    public Contract(int contractNumber, LocalDate contractDate, String[] contractList) {
         this.contractNumber = contractNumber;
         this.contractDate = contractDate;
-        this.contractS = contractS;
+        this.contractList = contractList;
     }
 
     public int getContractNumber() {
         return contractNumber;
     }
 
-    public String getContractDate() {
+    public LocalDate getContractDate() {
         return contractDate;
     }
 
-    public String[] getContractS() {
-        return contractS;
+    public String[] getContractList() {
+        return contractList;
     }
 
 
@@ -31,7 +32,7 @@ public class Contract {
         return "Contract{" +
                 "Number=" + contractNumber +
                 ", Date='" + contractDate + '\'' +
-                ", List=" + Arrays.toString(contractS) +
+                ", List=" + Arrays.toString(contractList) +
                 '}';
     }
 }

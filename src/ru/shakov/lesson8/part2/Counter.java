@@ -1,10 +1,10 @@
 package ru.shakov.lesson8.part2;
 
 public class Counter {      // отдельный класс в котором метод высчитывает количество обращений к static-переменной
-    static int counter = 0;
+    static int count = 0;
 
-    public static int Count() {
-        counter++;
-        return counter;
+    public static int getCount() {
+        count++;
+        return count;
     }
 }

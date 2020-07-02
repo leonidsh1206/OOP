@@ -1,21 +1,27 @@
 package ru.shakov.lesson8.part1;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        double addition = Calculator.Addition(10, 30);
+        Scanner scanner = new Scanner(System.in);
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+
+        double addition = Calculator.addition(a, b);
         System.out.println(addition);
 
-        double subtraction = Calculator.Subtraction(50,30);
+        double subtraction = Calculator.subtraction(a,b);
         System.out.println(subtraction);
 
-        double multiplication = Calculator.Multiplication(50,30);
+        double multiplication = Calculator.multiplication(a,b);
         System.out.println(multiplication);
 
-        double division = Calculator.Division(50,30);
+        double division = Calculator.division(a,b);
         System.out.println(division);
 
-        double percentage = Calculator.Percentage(50,30);
+        double percentage = Calculator.percentage(a,b);
         System.out.println(percentage);
 
     }
