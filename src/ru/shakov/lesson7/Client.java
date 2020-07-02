@@ -1,11 +1,12 @@
 package ru.shakov.lesson7;
 
 public class Client {
-    int depositToAccount;
-
+    int depositOnAccount;
+    int numberOfDrink;
     // метод для зачисления денег на счет клиента
 
-    public Client(int depositToAccount) {
-        this.depositToAccount = depositToAccount;
+    public Client(int numberOfDrink, int depositOnAccount) {
+        this.numberOfDrink = numberOfDrink;
+        this.depositOnAccount = depositOnAccount;
     }
 }

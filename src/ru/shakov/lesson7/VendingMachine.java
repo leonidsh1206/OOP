@@ -1,37 +1,43 @@
 package ru.shakov.lesson7;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class VendingMachine {
     public static void main(String[] args) {
 
-        Drinks[] drinks = Drinks.values();          // Выводим меню напитков
-        System.out.println(Arrays.toString(drinks));
+        // Выводим меню напитков
+        Drinks.printInterface();
 
-        // TODO Необходимо проработать взаимодействие автомата с пользователем
-
-        // Допустим, клиент client вносит на счет сумму 100
-        Client client = new Client(150);
-        System.out.println(client.depositToAccount);
-
-        // Допустим, выбираем напиток COFFEE
-        System.out.println(Drinks.COFFEE);      // Выводим на экран выбранный напиток
-
-        System.out.println(Drinks.COFFEE.getCost());
-
-        if (client.depositToAccount == 0) {
-            System.out.println("Вы не внесли деньги");  // ситуация если пользователь не внем деньги
-        } else {
-            if (client.depositToAccount <= Drinks.COFFEE.getCost()) {
-                System.out.println("На счету недостаточно средств для покупки данного напитка");    // пользоватлеь выбрал более дорогой напиток
+        // Выбираем номер напитка
+        System.out.println("Выберите номер напитка, который хотите купить: ");
+        int numberOfDrink = 0;
+        while (numberOfDrink <= 0 || numberOfDrink > 5 ) {          // прверяем корректность выбора номера напитка
+            Scanner scanner = new Scanner(System.in);
+            numberOfDrink = scanner.nextInt();
+            if ((numberOfDrink <= 0 || numberOfDrink > 5)) {
+                System.out.println("Выбран неверный номер напитка. Выберите снова");
             } else {
-                int lostMoney = client.depositToAccount - Drinks.COFFEE.getCost();
-                System.out.printf("Вот ваш напиток. На счету осталось %d денег", lostMoney);    // автомат выдает напиток и высчитывает остаток
+                System.out.println("Выбран напиток " + Drinks.returnTitle(numberOfDrink));
             }
         }
 
-        // TODO Необходимо предусмотреть ситуацию, когда пользователь выбрал неуществующий напиток
+        //Вносим на счет сумму
+        System.out.println("Введите сумму, которую хотите внести: ");
 
+        int depositToAccount = 0;
+        while (depositToAccount < Drinks.costOfDrink) {        // прверяем, внесена ли необходимая сумма
+            Scanner scanner = new Scanner(System.in);
+            depositToAccount += scanner.nextInt();
+            if (depositToAccount < Drinks.costOfDrink) {
+                System.out.println("Внесенная сумма " + depositToAccount + " недостаточна для оплаты выбранного напитка. Внесите еще:");
+            } else {
+                System.out.println("Получите Ваш напиток " + Drinks.returnTitle(numberOfDrink));
+                System.out.println("Остаток на Вашем счете " + (depositToAccount - Drinks.costOfDrink));
+            }
+        }
+        // Создаем нового клиента с номером номером выбранного напитка и с остатком от внесенной суммой
+        Client client = new Client(numberOfDrink, (depositToAccount - Drinks.costOfDrink));
+        System.out.println(client.depositOnAccount);
     }
 
 }
