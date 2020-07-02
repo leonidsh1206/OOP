@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Contract {
-    private int contractNumber;
-    private LocalDate contractDate;
-    private String[] contractList;
+    private static int contractNumber;
+    private static LocalDate contractDate;
+    private static String[] contractList;
+
+
 
     public Contract(int contractNumber, LocalDate contractDate, String[] contractList) {
         this.contractNumber = contractNumber;
@@ -14,15 +16,15 @@ public class Contract {
         this.contractList = contractList;
     }
 
-    public int getContractNumber() {
+    public static int getContractNumber() {
         return contractNumber;
     }
 
-    public LocalDate getContractDate() {
+    public static LocalDate getContractDate() {
         return contractDate;
     }
 
-    public String[] getContractList() {
+    public static String[] getContractList() {
         return contractList;
     }
 
