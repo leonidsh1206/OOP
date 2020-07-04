@@ -37,7 +37,6 @@ public class VendingMachine {
         }
         // Создаем нового клиента с номером номером выбранного напитка и с остатком от внесенной суммой
         Client client = new Client(numberOfDrink, (depositToAccount - Drinks.costOfDrink));
-        System.out.println(client.depositOnAccount);
     }
 
 }
