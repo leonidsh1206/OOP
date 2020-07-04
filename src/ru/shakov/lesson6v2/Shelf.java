@@ -1,7 +1,7 @@
 package ru.shakov.lesson6v2;
 
 public class Shelf {
-    // Unit[] units
-    // floor
-    // number
+    public Integer Floor() { return null; }
+    public Integer RoomNumber() { return null; }
+    public Integer Location() { return null; }
 }

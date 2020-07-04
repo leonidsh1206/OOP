@@ -1,6 +1,6 @@
-package ru.shakov.lesson6v2;
+package ru.shakov.lesson6v2.humans;
 
-public class Reader {
+public class Reader extends Human {
 
     public void readerAskTheBookFromLibrarian() {}
 
