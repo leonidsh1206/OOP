@@ -1,26 +1,32 @@
 package ru.shakov.lesson9.part1_part2;
 
-import ru.shakov.lesson9.part1_part2.classes.Dog;
-import ru.shakov.lesson9.part1_part2.classes.Duck;
-import ru.shakov.lesson9.part1_part2.classes.Fish;
-import ru.shakov.lesson9.part1_part2.classes.Horse;
+import ru.shakov.lesson9.part1_part2.classes.*;
+import ru.shakov.lesson9.part1_part2.exceptions.CannotFlyException;
 
 public class Main {
     public static void main(String[] args) {
-
-        Dog dog = new Dog();
+        Animal dog = new Dog();
         dog.getName();
         dog.getCanRun();
         dog.getCanSwim();
-        Duck duck = new Duck();
+        try {
+            dog.getCanFly();
+        } catch (CannotFlyException e) {
+          System.err.println("Dogs cannot fly");
+        }
+        Animal duck = new Duck();
         duck.getName();
-        duck.getCanFly();
+        try {
+            duck.getCanFly();
+        } catch (CannotFlyException e) {
+            e.printStackTrace();
+        }
         duck.getCanRun();
         duck.getCanSwim();
-        Fish fish = new Fish();
+        Animal fish = new Fish();
         fish.getName();
         fish.getCanSwim();
-        Horse horse = new Horse ();
+        Animal horse = new Horse ();
         horse.getName();
         horse.getCanRun();
     }

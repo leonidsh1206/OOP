@@ -1,5 +1,6 @@
 package ru.shakov.lesson9.part1_part2.classes;
 
+import ru.shakov.lesson9.part1_part2.exceptions.CannotFlyException;
 import ru.shakov.lesson9.part1_part2.interfaces.Run;
 import ru.shakov.lesson9.part1_part2.interfaces.Swim;
 
@@ -21,5 +22,10 @@ public class Dog extends Animal implements Run, Swim {
     public String getCanSwim() {
         System.out.println(" немного может плавать");
         return (" немного может плавать");
+    }
+
+    @Override
+    public String getCanFly() throws CannotFlyException {
+        throw new CannotFlyException();
     }
 }
