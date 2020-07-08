@@ -1,5 +1,6 @@
 package ru.shakov.lesson9.part1_part2.classes;
 
+import ru.shakov.lesson9.part1_part2.exceptions.CannotFlyException;
 import ru.shakov.lesson9.part1_part2.interfaces.Run;
 
 public class Horse extends Animal implements Run {
@@ -12,5 +13,15 @@ public class Horse extends Animal implements Run {
     public String getCanRun() {
         System.out.println(" может быстро бегать");
         return (" может быстро бегать");
+    }
+
+    @Override
+    public String getCanFly() throws CannotFlyException {
+        return null;
+    }
+
+    @Override
+    public String getCanSwim() {
+        return null;
     }
 }
