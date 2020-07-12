@@ -1,10 +1,6 @@
-package ru.shakov.lesson9.part1_part2.classes;
+package ru.shakov.lesson9.part1_part2.hierarchy;
 
-import ru.shakov.lesson9.part1_part2.interfaces.Fly;
-import ru.shakov.lesson9.part1_part2.interfaces.Run;
-import ru.shakov.lesson9.part1_part2.interfaces.Swim;
-
-public class Duck extends Animal implements Run, Swim, Fly {
+public class Duck extends Animal {
 
     @Override
     public void getName() {

@@ -1,10 +1,6 @@
-package ru.shakov.lesson9.part1_part2.classes;
+package ru.shakov.lesson9.part1_part2.hierarchy;
 
-import ru.shakov.lesson9.part1_part2.exceptions.CannotFlyException;
-import ru.shakov.lesson9.part1_part2.interfaces.Run;
-import ru.shakov.lesson9.part1_part2.interfaces.Swim;
-
-public class Dog extends Animal implements Run, Swim {
+public class Dog extends Animal {
 
     @Override
     public void getName() {
@@ -25,7 +21,7 @@ public class Dog extends Animal implements Run, Swim {
     }
 
     @Override
-    public String getCanFly() throws CannotFlyException {
-        throw new CannotFlyException();
+    public String getCanFly() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException();
     }
 }
