@@ -2,9 +2,8 @@ package ru.shakov.lesson19;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Check {
     public static void main(String[] args) {
@@ -21,17 +20,20 @@ public class Check {
         }
 
         System.out.printf("%-20s %8s   %6s   %10s\n", "Наименование", "Цена", "Кол-во", "Стоимость");
-        System.out.printf("===================================================\n");
+        System.out.print("===================================================\n");
         double sum = 0;
-        for (int i = 0; i < (products.size()); i++) {
-            String name = products.get(i).getName();
-            double quantity = products.get(i).getQuantity();
-            double price = products.get(i).getPrice();
+        for (Product product : products) {
+            String name = product.getName();
+            double quantity = product.getQuantity();
+            double price = product.getPrice();
             double cost = quantity * price;
             sum += cost;
             System.out.printf("%-20s %8.2f x %6.3f = %10.2f\n", name, price, quantity, cost);
         }
-        System.out.printf("===================================================\n");
-        System.out.printf("%-40s %10.2f", "Итого:", sum);
+        System.out.print("===================================================\n");
+        System.out.printf("%-40s %10.2f\n", "Итого:", sum);
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");   // Вывод даты в нужном формате
+        System.out.printf("%-30s %20s\n", "Дата и время:", sdf.format(date));
     }
 }

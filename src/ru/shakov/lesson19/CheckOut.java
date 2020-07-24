@@ -1,7 +1,9 @@
 package ru.shakov.lesson19;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,7 +33,10 @@ public class CheckOut {
                 pw.printf("%-20s %8.2f x %6.3f = %10.2f\n", name, price, quantity, cost);
             }
             pw.printf("===================================================\n");
-            pw.printf("%-40s %10.2f", "Итого:", sum);
+            pw.printf("%-40s %10.2f\n", "Итого:", sum);
+            Date date = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");   // Вывод даты в нужном формате
+            pw.printf("%-30s %20s\n", "Дата и время:", sdf.format(date));
         }catch (Exception ex) {
             ex.printStackTrace();
         }
