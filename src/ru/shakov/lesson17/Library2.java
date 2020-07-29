@@ -28,7 +28,7 @@ public class Library2 {
                 }
                 break;
                 case 2: {
-                    try (ObjectOutputStream oos = new ObjectOutputStream (
+                    try (ObjectOutputStream oos = new ObjectOutputStream(
                             new FileOutputStream("src\\ru\\shakov\\lesson17\\Library.dat", true))) {
                         oos.writeObject(books);
                         oos.flush();
