@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Library {
+public class Library2 {
     public static void main(String[] args) {
         List<Book> books = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
@@ -28,9 +28,10 @@ public class Library {
                 }
                 break;
                 case 2: {
-                    try (OutputStream os = new FileOutputStream("src\\ru\\shakov\\lesson17\\Library.dat", true);
-                         ObjectOutputStream oos = new ObjectOutputStream(os)) {
+                    try (ObjectOutputStream oos = new ObjectOutputStream (
+                            new FileOutputStream("src\\ru\\shakov\\lesson17\\Library.dat", true))) {
                         oos.writeObject(books);
+                        oos.flush();
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -42,7 +43,7 @@ public class Library {
                         System.out.println(book);
                     }
                 }
-                    break;
+                break;
                 case 4:
                     return;
             }
