@@ -1,7 +1,12 @@
 package ru.shakov.lesson19;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,12 +20,12 @@ public class CheckOut {
                 String name = sc.nextLine();
                 double quantity = Double.parseDouble(sc.nextLine());
                 double cost = Double.parseDouble(sc.nextLine());
-                products.add(new Product().setName(name).setQuantity(quantity).setPrice(cost));
+                products.add(new Product(name, quantity, cost));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        try(PrintWriter pw = new PrintWriter(new FileOutputStream("src\\ru\\shakov\\lesson19\\out.txt"))) {
+        try (PrintWriter pw = new PrintWriter(new FileOutputStream("src\\ru\\shakov\\lesson19\\out.txt"))) {
             pw.printf("%-20s %8s   %6s   %10s\n", "Наименование", "Цена", "Кол-во", "Стоимость");
             pw.printf("===================================================\n");
             double sum = 0;
@@ -34,10 +39,10 @@ public class CheckOut {
             }
             pw.printf("===================================================\n");
             pw.printf("%-40s %10.2f\n", "Итого:", sum);
-            Date date = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");   // Вывод даты в нужном формате
-            pw.printf("%-30s %20s\n", "Дата и время:", sdf.format(date));
-        }catch (Exception ex) {
+            LocalDateTime date = LocalDateTime.now();
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
+            pw.printf("Дата: %45s",dtf.format(date));
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

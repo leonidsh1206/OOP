@@ -5,16 +5,14 @@ public class Product {
     private double quantity;
     private double price;
 
+    public Product(String name, double quantity, double price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
-    }
-
-    public double getQuantity() {
-        return quantity;
-    }
-
-    public double getPrice() {
-        return price;
     }
 
     public Product setName(String name) {
@@ -22,9 +20,17 @@ public class Product {
         return this;
     }
 
+    public double getQuantity() {
+        return quantity;
+    }
+
     public Product setQuantity(double quantity) {
         this.quantity = quantity;
         return this;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public Product setPrice(double price) {
