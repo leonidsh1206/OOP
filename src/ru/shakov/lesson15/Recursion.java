@@ -3,15 +3,17 @@ package ru.shakov.lesson15;
 import java.io.File;
 
 public class Recursion {
+    // Вводим массив вложенных файлов для реализации метода
+    private static File[] files;
+
     public static void main(String[] args) {
 
         // Выбор директории по которой будет проходить сортировка
-        File dir = new File("d:\\UI_copy");
-        recursiveOutput(dir, "-");
+        //
+        File dir = new File("D:\\UI_copy");
+        System.out.println(dir.getName());
+        recursiveOutput(dir, "");
     }
-
-    // Вводим массив вложенных файлов для реализации метода
-    private static File[] files;
 
     public static void recursiveOutput(File root, String depth) {
         // Вводим глубину рекурсии String depth
@@ -19,10 +21,10 @@ public class Recursion {
         if (files != null) {    //делаем проверку, так как listFiles() может вернуть null
             for (File file : files) {   // перебираем все файлы
                 if (file.isDirectory()) {   // вызов производим только когда файл является Директорией
-                    System.out.printf("%s %s%n",depth, file.getName());
+                    System.out.printf("%s%s%n", depth, file.getName());
                     recursiveOutput(file, depth + "-");
                 } else {
-                    System.out.printf("%s %s%n", depth, file.getName());
+                    System.out.printf("%s%s%n", depth, file.getName());
                 }
             }
         } else {
