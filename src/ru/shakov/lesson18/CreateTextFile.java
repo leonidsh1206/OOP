@@ -2,13 +2,13 @@ package ru.shakov.lesson18;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 // Программа для создания файла для последующей конвертации
 public class CreateTextFile {
     public static void main(String[] args) {
         try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(
-                "src\\ru\\shakov\\lesson18\\text1.txt"), Charset.forName("UTF-8"))) {
+                "src\\ru\\shakov\\lesson18\\text1.txt"), StandardCharsets.UTF_8)) {
             osw.write("Привет мир!");
             osw.write("До свидания!");
             osw.write("Hello world!");
