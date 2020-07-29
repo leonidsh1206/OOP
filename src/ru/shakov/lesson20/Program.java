@@ -19,7 +19,7 @@ public class Program {
         // Создаем новый Response.class куда будем выгружать
         Response response = mapper.readValue(jsonUrl, Response.class);
         for (DataSeries dataSeries : response.getDataseries()) {
-            System.out.printf("%d %s %d %d %n",dataSeries.date, dataSeries.weather,
+            System.out.printf("%d %s %d %d %n", dataSeries.date, dataSeries.weather,
                     dataSeries.temp2m.max, dataSeries.temp2m.min);
         }
     }
