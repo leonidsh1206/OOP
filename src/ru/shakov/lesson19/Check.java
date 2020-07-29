@@ -37,6 +37,6 @@ public class Check {
         System.out.printf("%-40s %10.2f\n", "Итого:", sum);
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
-        System.out.printf("Дата: %45s",dtf.format(date));
+        System.out.printf("Дата: %45s", dtf.format(date));
     }
 }

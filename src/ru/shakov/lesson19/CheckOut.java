@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,7 +39,7 @@ public class CheckOut {
             pw.printf("%-40s %10.2f\n", "Итого:", sum);
             LocalDateTime date = LocalDateTime.now();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
-            pw.printf("Дата: %45s",dtf.format(date));
+            pw.printf("Дата: %45s", dtf.format(date));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
