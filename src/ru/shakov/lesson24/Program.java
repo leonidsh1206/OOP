@@ -16,7 +16,14 @@ public class Program {
         System.out.println();
 
         Set<String> newStringSet = new LinkedHashSet<>();
-        Iterator<String> iterator = stringSet.iterator();
+        newStringSet = removeEvenLength(stringSet);
+        for (String entry : newStringSet) {
+            System.out.println(entry);
+        }
+    }
+    public static Set<String> removeEvenLength(Set<String> set){
+        Set<String> newStringSet = new LinkedHashSet<>();
+        Iterator<String> iterator = set.iterator();
         String st;
         while (iterator.hasNext()) {
             st = iterator.next();
@@ -24,8 +31,6 @@ public class Program {
                 newStringSet.add(st);
             }
         }
-        for (String entry : newStringSet) {
-            System.out.println(entry);
-        }
+        return newStringSet;
     }
 }
