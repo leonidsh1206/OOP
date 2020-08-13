@@ -38,20 +38,23 @@ public class HardComparator {
     static class PersonNameComparator implements Comparator<Person> {
         @Override
         public int compare(Person o1, Person o2) {
-            return (o1.getName()).compareTo(o2.getName());
+            int compareName = (o1.getName()).compareTo(o2.getName());
+            return compareName;
         }
     }
 
     static class PersonAgeComparator implements Comparator<Person> {
         @Override
         public int compare(Person o1, Person o2) {
+            int compareAge;
             if (o1.getAge() > o2.getAge()) {
-                return 1;
+                compareAge = 1;
             } else if (o1.getAge() < o2.getAge()) {
-                return -1;
+                compareAge = -1;
             } else {
-                return 0;
+                compareAge = 0;
             }
+            return compareAge;
         }
     }
 }
