@@ -18,15 +18,18 @@ public class OnlineStoreBasket implements Basket {
 
     @Override
     public void addProduct(String product, int quantity) {
-        productList.add(index, this.product);
-        quantityList.add(index, this.quantity);
+        productList.add(index, product);
+        quantityList.add(index, quantity);
+        System.out.println("Add " + product + " " + quantity);
         index++;
     }
 
     @Override
     public void removeProduct(String product) {
-        productList.remove(productList.indexOf(product));
-        quantityList.remove(productList.indexOf(product));
+        int k = productList.indexOf(product);
+//        productList.remove(k);
+//        quantityList.remove(k);
+        System.out.println(productList.remove(k) + " " + quantityList.remove(k) + " removed");
         index--;
     }
 
@@ -46,7 +49,7 @@ public class OnlineStoreBasket implements Basket {
     @Override
     public List<String> getProducts() {
         for (int i = 0; i < index; i++) {
-            System.out.println(index + productList.get(i) + quantityList.get(i));
+            System.out.println(i + " " + productList.get(i) + " " + quantityList.get(i));
         }
         return null;
     }
