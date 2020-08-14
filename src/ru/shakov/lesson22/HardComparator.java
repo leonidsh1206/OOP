@@ -5,8 +5,7 @@ import java.util.Comparator;
 
 public class HardComparator {
     public static void main(String[] args) {
-
-
+        // Исходный список в виде массива
         Person[] person = new Person[]{
                 new Person("Вова", 21),
                 new Person("Вова", 3),
@@ -35,6 +34,7 @@ public class HardComparator {
 
     }
 
+    // Класс для сортировки по имени
     static class PersonNameComparator implements Comparator<Person> {
         @Override
         public int compare(Person o1, Person o2) {
@@ -43,6 +43,7 @@ public class HardComparator {
         }
     }
 
+    // Класс для сортировки по возрасту
     static class PersonAgeComparator implements Comparator<Person> {
         @Override
         public int compare(Person o1, Person o2) {
