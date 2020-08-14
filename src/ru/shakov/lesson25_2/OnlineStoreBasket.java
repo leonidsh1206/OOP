@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class OnlineStoreBasket implements Basket {
 
-    HashMap<String, Integer> productMap =  new HashMap<>();
+    HashMap<String, Integer> productMap = new HashMap<>();
 
     // Метод добавляет "продукт" и его "количество" в карту HashMap
     @Override

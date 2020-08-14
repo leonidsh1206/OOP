@@ -30,6 +30,7 @@ public class Program {
 
         // Выводим количество одного из имеющихся продуктов
         onlineStoreBasket.getProductQuantity("CopyBook");
+        onlineStoreBasket.getProducts();
         System.out.println("----------------------------------");
 
         // Очищаем корзину
