@@ -1,6 +1,9 @@
 package ru.shakov.lesson30;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 // Программа для поиска первого неповторяющегося символа в строке
 public class Program2 {
@@ -13,35 +16,32 @@ public class Program2 {
         Map<Character, Boolean> map = new LinkedHashMap<>();
 
         // Добавляем элементы из массива в коллекцию LinkedHashMap
-        for (int i = 0; i < chars.length; i++) {
+        for (char aChar : chars) {
             boolean k = true;
-            if(map.containsKey(chars[i])) {
-                k = true;
-                map.remove(chars[i]);
-                map.put(chars[i], k);   // Все повторяющиеся элементы будут иметь значение Value равное true
+            // Все неповторяющиеся элементы будуть иметь значение Value равное false
+            if (map.containsKey(aChar)) {
+                map.remove(aChar);
             } else {
                 k = false;
-                map.put(chars[i], k);   // Все неповторяющиеся элементы будуть иметь значение Value равное false
             }
+            map.put(aChar, k);   // Все повторяющиеся элементы будут иметь значение Value равное true
         }
         System.out.println(map);
 
         // Добавляем ключи(Key) LinkedHashMap в отдельный список
-        List keyList = new ArrayList(map.keySet());
+        List<Character> keyList = new ArrayList<>(map.keySet());
         System.out.println(keyList);
 
         // Добавляем значения(Value) из LinkedHashMap в отдельный список
-        List valueList = new ArrayList(map.values());
+        List<Boolean> valueList = new ArrayList<>(map.values());
         System.out.println(valueList);
 
         // Вводим вспомогательную переменную, индекс
-        Integer minIndex = 0;
+        int minIndex = 0;
 
         // Находим ИНДЕКС первого значения false в списке значений
-        Iterator<Boolean> iterator = valueList.iterator();
-        while (iterator.hasNext()) {
-            Boolean nextIndex = iterator.next();
-            if (nextIndex == true) {
+        for (Boolean nextIndex : valueList) {
+            if (nextIndex) {
                 minIndex++;
             }
         }

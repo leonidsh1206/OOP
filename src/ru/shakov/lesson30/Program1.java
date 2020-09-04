@@ -1,6 +1,9 @@
 package ru.shakov.lesson30;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 // Программа для поиска первого неповторяющегося символа в строке
 public class Program1 {
@@ -15,25 +18,23 @@ public class Program1 {
         // Добавляем элементы из массива в коллекцию LinkedHashMap
         for (int i = 0; i < chars.length; i++) {
             map.put(chars[i], i); // Повторяющиеся элементы будут перезаписываться с новым значением
-        // Первый неповторяющийся элемент НЕ БУДЕТ перезаписан
+            // Первый неповторяющийся элемент НЕ БУДЕТ перезаписан
         }
         System.out.println(map);
 
         // Добавляем ключи(Key) LinkedHashMap в отдельный список
-        List keyList = new ArrayList(map.keySet());
+        List<Character> keyList = new ArrayList<>(map.keySet());
         System.out.println(keyList);
 
         // Добавляем значения(Value) из LinkedHashMap в отдельный список
-        List valueList = new ArrayList(map.values());
+        List<Integer> valueList = new ArrayList<>(map.values());
         System.out.println(valueList);
         // Вводим вспомогательную переменную, присваиваем ей произвольное значение из всех значений списка
-        Integer minIndex = (Integer) valueList.get(2);
+        Integer minIndex = valueList.get(2);
         System.out.println(minIndex);
 
         // Находим ИНДЕКС минимального значение в списке значений
-        Iterator<Integer> iterator = valueList.iterator();
-        while (iterator.hasNext()) {
-            Integer nextIndex = iterator.next();
+        for (Integer nextIndex : valueList) {
             if (minIndex > nextIndex) {
                 minIndex = nextIndex;
             }
