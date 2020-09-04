@@ -7,21 +7,17 @@ public class Program1 {
         // Преобразование строки в массив символов
         char[] chars = string.toCharArray();
 
-        boolean b = false;  // Вспомогательная переменная
+        boolean isPalindrome = true;  // Вспомогательная переменная
         //Обход массива
-        for (int i = 0; i < chars.length / 2; i++) {
-            if (chars[i] == chars[chars.length - i - 1]) {
-                b = true;
-            } else {    // Если хотя бы раз наблюдается ассиметрия
-                b = false;
+        for (int i = 0; i < chars.length >> 1; i++) {
+            // Если хотя бы раз наблюдается ассиметрия
+            if (isPalindrome = chars[i] == chars[chars.length - i - 1]) {
+                isPalindrome = false;
+                break;
             }
         }
 
         // Вывод сообщения, является ли исходная строка палиндромом
-        if (b) {
-            System.out.println("Палиндром");
-        } else {
-            System.out.println("Не палиндром");
-        }
+        System.out.println(isPalindrome ? "Палиндром" : "Не палиндром");
     }
 }

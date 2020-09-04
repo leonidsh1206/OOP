@@ -1,5 +1,7 @@
 package ru.shakov.lesson31;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 // Программа проверяет, является ли исходная строка палиндромом, используя Stack
@@ -10,23 +12,20 @@ public class Program2 {
         char[] chars = string.toCharArray();
 
         // Добавлем элементы массива в Стек
-        Stack stack = new Stack();
+        Deque<Character> stack = new ArrayDeque<>();
         for (char ch : chars) {
-            System.out.print(stack.push(ch) + " ");
+            stack.push(ch);
         }
         System.out.println();
 
         // Создаем новую строку и добавляем в нее извлекаемы из стека элементы
-        String st = "";
+        StringBuilder st = new StringBuilder();
         while (!stack.isEmpty()) {
-            st += stack.pop();
+            st.append(stack.pop());
         }
         System.out.println(st); // Выводим получившуюся строку
 
-        if (st.equals(string)) {    // сравниваем получившуюся строку с исходной и выводим, являетс яли она палиндромом
-            System.out.println("Палиндром");
-        } else {
-            System.out.println("Не палиндром");
-        }
+        // сравниваем получившуюся строку с исходной и выводим, являетс яли она палиндромом
+        System.out.println(st.toString().equals(string) ? "Палиндром" : "Не палиндром");
     }
 }
